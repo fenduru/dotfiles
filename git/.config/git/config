@@ -1,0 +1,5 @@
+[user]
+	email = fenduru@users.noreply.github.com
+	name = Josh Fee
+[pull]
+	rebase = true
