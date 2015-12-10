@@ -1,0 +1,45 @@
+# Navigate windows
+alt + h
+  bspc window --focus left || bspc monitor --focus left
+alt + j
+  bspc window --focus down || bspc monitor --focus down
+alt + k
+  bspc window --focus up || bspc monitor --focus up
+alt + l
+  bspc window --focus right || bspc monitor --focus right
+
+# Resize window
+alt + shift + h
+  bspc window --edge left -40 || bspc window --edge right -40
+alt + shift + j
+  bspc window --edge up +40 || bspc window --edge down +40
+alt + shift + k
+  bspc window --edge up -40 || bspc window --edge down -40
+alt + shift + l
+  bspc window --edge left +40 || bspc window --edge right +40
+
+# Swap windows
+super + h
+  bspc window --swap left.local || bspc window --to-monitor left -f --rotate right 180
+super + j
+  bspc window --swap down
+super + k
+  bspc window --swap up
+super + l
+  bspc window --swap right.local || bspc window --to-monitor right -f
+
+# Close window
+alt + shift + c
+  bspc window --close
+
+# Preselect Split Direction
+alt + n ; alt + {h,j,k,l}
+  bspc window --presel {left,down,up,right}
+
+# Rotate Tree
+super + shift + {h,j,k,l}
+  bspc window --rotate {left,down,up,right} 90
+
+# Start terminal
+alt + Return
+  termite

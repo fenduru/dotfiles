@@ -1,0 +1,16 @@
+#! /bin/sh
+
+sxhkd &
+compton &
+
+# Add room for panel on primary monitor
+bspc config -m primary bottom_padding 35
+bspc config border_width 2
+
+bspc config split_ratio 0.6
+
+bspc config history_aware_focus true
+bspc config auto_cancel true
+
+# Special rules
+bspc rule -a lxqt manage=off
