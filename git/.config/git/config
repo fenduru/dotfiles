@@ -3,3 +3,5 @@
 	name = Josh Fee
 [pull]
 	rebase = true
+[push]
+	default = simple
