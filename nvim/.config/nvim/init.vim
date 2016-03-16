@@ -4,7 +4,7 @@ filetype off                   " required!
 call plug#begin('~/.vim/plugged')
 " UI enhancements
 " Plug 'altercation/vim-colors-solarized' " pretty colors
-Plug 'vim-scripts/wombat256.vim'
+Plug 'morhetz/gruvbox'
 Plug 'bling/vim-airline' " pretty status bar
 Plug 'airblade/vim-gitgutter' " git diff gutter icons
 
@@ -171,11 +171,12 @@ endfunction
 " Run :FixWhitespace to remove end of line white space
 command! -range=% FixWhitespace call <SID>FixWhitespace(<line1>,<line2>)
 
-let g:airline_theme = 'powerlineish'
+let g:airline_theme = 'gruvbox'
 let g:airline_powerline_fonts = 1
 
 set background=dark
-colorscheme wombat256mod
+let g:gruvbox_contrast_dark = 'hard'
+colorscheme gruvbox
 " colorscheme solarized
 " let g:solarized_termcolors=256
 
