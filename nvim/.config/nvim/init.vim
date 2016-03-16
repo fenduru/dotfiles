@@ -11,15 +11,16 @@ Plug 'airblade/vim-gitgutter' " git diff gutter icons
 " Languages
 " better js highlighting/indenting
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'marijnh/tern_for_vim', { 'for': 'javascript', 'do': 'npm install' }
+Plug 'carlitux/deoplete-ternjs'
 " mustache/handlebars template support
 Plug 'mustache/vim-mustache-handlebars', { 'for': ['handlebars', 'mustache'] }
 Plug 'wting/rust.vim', { 'for': 'rust' } " rust syntax
 Plug 'cespare/vim-toml', { 'for': 'toml' } " toml syntax
 
-" General autocomplete. Slows down first launch on host and requires
-" a c++11 compatible libstdc++
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+" Autocomplete
+Plug 'Shougo/deoplete.nvim'
+Plug 'ervandew/supertab'
+
 Plug 'Raimondi/delimitMate'
 
 " rust autocompletion
@@ -93,7 +94,7 @@ if &term =~? "^xterm.*"
 endif
 
 " Seed normal omnicomplete dbs
-set omnifunc=syntaxcomplete#Complete
+set omnifunc=deoplete#mappings#manual_complete
 
 "" Mappings
 """""""""""""
@@ -196,10 +197,6 @@ let g:syntastic_enable_balloons = 0
 " statements
 let g:syntastic_enable_perl_checker = 1
 
-""TernJs
-let g:tern_who_argument_hints = 'on_move'
-let g:tern_show_signature_in_pum = 1
-
 "" ctrlp
 " let g:ctrlp_custom_ignore= {
 "  \ 'dir': '\v[\/](\.(git|hg|svn))|(node_modules|vendor|bin|rint|tmp|image_results)$',
@@ -222,6 +219,13 @@ let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 " close the preview window when leaving insert mode
 let g:ycm_autoclose_preview_window_after_insertion = 1
+
+"" Deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+
+"" SuperTab
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
 "" delimitMate
 let g:delimitMate_expand_cr=2
