@@ -11,6 +11,7 @@ Plug 'airblade/vim-gitgutter' " git diff gutter icons
 " better js highlighting/indenting
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'carlitux/deoplete-ternjs'
+
 " mustache/handlebars template support
 Plug 'mustache/vim-mustache-handlebars', { 'for': ['handlebars', 'mustache'] }
 Plug 'wting/rust.vim', { 'for': 'rust' } " rust syntax
@@ -23,7 +24,10 @@ Plug 'ervandew/supertab'
 Plug 'Raimondi/delimitMate'
 
 " rust autocompletion
-Plug 'phildawes/racer', { 'for': 'rust', 'do': 'cargo build --release' }
+Plug 'racer-rust/vim-racer'
+
+" idris
+Plug 'idris-hackers/idris-vim'
 
 " Motion
 Plug 'camelcasemotion' " Motion for camelcase words
@@ -183,3 +187,8 @@ let g:delimitMate_expand_cr=2
 let g:delimitMate_backspace = 1
 let g:delimitMate_jump_expansion= 1
 let g:delimitMate_balance_matchpairs = 1
+
+"" Racer
+set hidden
+let g:racer_cmd = "/usr/bin/racer"
+let $RUST_SRC_PATH="/home/joshfee/.multirust/toolchains/nightly/src"
