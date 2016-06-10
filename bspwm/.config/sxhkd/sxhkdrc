@@ -1,44 +1,44 @@
-# Navigate windows
+# Navigate nodes
 alt + h
-  bspc window --focus left || bspc monitor --focus left
+  bspc node --focus west || bspc monitor --focus west
 alt + j
-  bspc window --focus down || bspc monitor --focus down
+  bspc node --focus south || bspc monitor --focus down
 alt + k
-  bspc window --focus up || bspc monitor --focus up
+  bspc node --focus north || bspc monitor --focus up
 alt + l
-  bspc window --focus right || bspc monitor --focus right
+  bspc node --focus east || bspc monitor --focus east
 
-# Resize window
+# Resize node
 alt + shift + h
-  bspc window --edge left -40 || bspc window --edge right -40
+  bspc node @west -r -40 || bspc node @east -r -40
 alt + shift + j
-  bspc window --edge up +40 || bspc window --edge down +40
+  bspc node @north -r +40 || bspc node @south -r +40
 alt + shift + k
-  bspc window --edge up -40 || bspc window --edge down -40
+  bspc node @north -r -40 || bspc node @south -r -40
 alt + shift + l
-  bspc window --edge left +40 || bspc window --edge right +40
+  bspc node @west -r +40 || bspc node @east -r +40
 
-# Swap windows
+# Swap nodes
 super + h
-  bspc window --swap left.local || bspc window --to-monitor left -f --rotate right 180
+  bspc node --swap west.local || bspc node --to-monitor west -f --rotate east 180
 super + j
-  bspc window --swap down
+  bspc node --swap south
 super + k
-  bspc window --swap up
+  bspc node --swap north
 super + l
-  bspc window --swap right.local || bspc window --to-monitor right -f
+  bspc node --swap east.local || bspc node --to-monitor east -f
 
-# Close window
+# Close node
 alt + shift + c
-  bspc window --close
+  bspc node --close
 
 # Preselect Split Direction
 alt + n ; alt + {h,j,k,l}
-  bspc window --presel {left,down,up,right}
+  bspc node -p {west,south,up,east}
 
 # Rotate Tree
 super + shift + {h,j,k,l}
-  bspc window --rotate {left,down,up,right} 90
+  bspc node --rotate {west,south,up,east} 90
 
 # Start terminal
 alt + Return
